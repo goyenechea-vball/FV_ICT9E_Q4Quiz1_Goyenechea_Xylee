@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Quiz 1</title>
+
+	<style>
+		body{
+			background-color: #ffedfb;
+		}
+	</style>
+
+</head>
+<body>
+<center>
+	<h1>Calculate your BMI</h1>
+	<p>The Body Mass Index is a medical tool that divides your weight in kilograms(kg) divided by the square of your height in meters (m2) to estimate the amount of body fat you have.</p>
+</center>
+
+	<div class="col-md-8">
+		<center>
+		<details ontoggle="message()">
+			<summary>How to</summary>
+				<p>Input your current weight in kilograms(kg) on the first text box. Then, input your current height in meters(m) on the second text box. Once done, click the calculate button. (note: no need to input "kg" or "m".</p>
+			</summary>
+		</details>
+
+		<form>
+			<!-- Fill in with your details -->
+				<label style="color: #1b67a6; font-family: cursive;">Enter weight in kilograms:</label> 
+				<br>
+					<input type="number" id="weight" class="form-control" style="background-color: #f3c6f5; height: 45px; width: 400px;">
+							<br>
+					<label style="color: #1b67a6; font-family: cursive;">Enter height in meters:</label>
+					<br>
+							<input type="number" id="height" class="form-control" style="background-color: #f3c6f5; height: 45px; width: 400px;" step = "any">
+							<br><br>
+							<button type="submit" class="btn btn-info" onclick="showValue()">Calculate</button>
+
+					</form>
+		</center>
+
+		<script>
+		 function showValue(){
+        var weight = document.getElementById('weight').value; // Weight in kilograms
+        var height = document.getElementById('height').value; // Height in meters
+
+        var BMI = Math.round(weight / Math.pow(height,2));
+
+        window.alert('Your BMI is ' + BMI);
+
+    
+		if(BMI<18.5){
+			alert("You are Underweight");
+		}else if(BMI>=18.5 && BMI<=24.9){
+			alert("You have a Normal Weight");
+		}else if(BMI>=25 && BMI<=24.9){
+			alert("You are Overweight");
+		}else{
+			alert("You are Obese");
+		}
+	}
+	</script>
+
+
+
+
+
+
+
+</body>
+</html>
